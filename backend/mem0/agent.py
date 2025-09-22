@@ -11,10 +11,8 @@ import uuid
 
 load_dotenv()
 
-# google_api_key = os.getenv("GOOGLE_API_KEY")
-google_api_key = "AIzaSyA7n9IzGHK6s8CH2m1M0UWV8GXsQrExWuU"
-# mem0_api_key = os.getenv("MEM0_API_KEY")
-mem0_api_key = "m0-zv4XPnMEi6QTpOsXgTGaQteURn8kIxzVG05rTUQC"
+google_api_key = os.getenv("GOOGLE_API_KEY")
+mem0_api_key = os.getenv("MEM0_API_KEY")
 # Define a global user ID for simplicity TODO: implement proper user management
 USER_ID = "Alex"
 
