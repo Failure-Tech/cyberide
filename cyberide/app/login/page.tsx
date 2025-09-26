@@ -254,7 +254,7 @@ const Login = () => {
               </div>
             </div>
             <div className="absolute bottom-5 left-10 font-medium text-[15px] text-[#a8a7a6]">
-              © Reteena 2025. All Rights Reserved.
+              © cyberide 2025. All Rights Reserved.
             </div>
           </div>
         </div>
