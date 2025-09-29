@@ -165,7 +165,7 @@ function SideBarChatList({ userId }: { userId: string | any }) {
                   setEditingId(null);
                 }
               }}
-              className="flex-1 min-w-0 text-sm font-medium bg-white border border-gray-300 rounded px-2 py-0.5 focus:outline-none focus:border-blue-500"
+              className="flex-1 min-w-0 text-sm text-black font-medium bg-white border border-gray-300 rounded px-2 py-0.5 focus:outline-none focus:border-blue-500"
             />
           ) : (
             <div
@@ -186,7 +186,7 @@ function SideBarChatList({ userId }: { userId: string | any }) {
                 e.stopPropagation();
                 handleDelete(chat.id);
               }}
-              className={`p-1 rounded hover:bg-red-100 transition-colors ${
+              className={`p-1 rounded text-black hover:bg-red-100 transition-colors ${
                 editingId === chat.id
                   ? "opacity-0"
                   : "opacity-0 group-hover:opacity-100"
@@ -199,7 +199,7 @@ function SideBarChatList({ userId }: { userId: string | any }) {
           <div
             className={`flex items-center transition-opacity duration-75 flex-shrink-0 ${
               editingId === chat.id
-                ? "opacity-100"
+                ? "opacity-100 text-black"
                 : "opacity-0 group-hover:opacity-100"
             }`}
           >
@@ -209,7 +209,7 @@ function SideBarChatList({ userId }: { userId: string | any }) {
                   e.stopPropagation();
                   handleRename(chat.id, editingName);
                 }}
-                className="p-1 hover:bg-green-200 bg-green-100 rounded transition-colors duration-75"
+                className="p-1 hover:bg-green-200 text-black bg-green-100 rounded transition-colors duration-75"
                 title="Save changes"
               >
                 <BiCheck className="w-4 h-4 text-green-600" />
@@ -217,7 +217,7 @@ function SideBarChatList({ userId }: { userId: string | any }) {
             ) : (
               <button
                 onClick={(e) => startEditing(e, chat.id, chat.name)}
-                className="p-1 hover:bg-gray-200 rounded transition-colors duration-75"
+                className="p-1 hover:bg-gray-200 rounded text-black transition-colors duration-75"
                 title="Rename chat"
               >
                 <BiPencil className="w-3 h-3 text-gray-500" />
@@ -380,7 +380,7 @@ export default function SideBar(props: SidebarProps) {
           </div>
 
           {/* Memory */}
-          <button
+          {/* <button
             onClick={() => {
               router.push("/repository");
             }}
@@ -393,7 +393,7 @@ export default function SideBar(props: SidebarProps) {
             {!collapsed && (
               <span className="text-sm font-medium">Memory Graph</span>
             )}
-          </button>
+          </button> */}
 
           {/* Dashboard */}
           <div

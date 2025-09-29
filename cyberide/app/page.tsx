@@ -170,6 +170,25 @@ export default function Home() {
     SetConversation({ ...newconversation });
   }
 
+  const retrieveCode = async () => {
+    const code = "";
+    try {
+      const response = await axios.post(
+        "http://localhost:5000/code",
+        code,
+        {
+          headers: {"Content-Type": "multipart/form-data"}
+        }
+      );
+
+    }
+
+    catch (err: any) {
+      console.error("Code failed: ", err);
+      alert("Code failed, please try again");
+    }
+  }
+
   const uploadFile = async () => {
     if (!selectedFile || !user) return;
 
@@ -381,8 +400,8 @@ export default function Home() {
 
               <div className="w-full">
                 <textarea
-                  className="w-full outline-none resize-none pt-5 px-2"
-                  placeholder="Turn your complex thoughts into graphs..."
+                  className="w-full outline-none resize-none pt-5 px-2 text-black"
+                  placeholder="Turn your complex code into something new..."
                   ref={textInput}
                   onKeyUp={(e) => {
                     if (e.key == "Enter" && !e.shiftKey) {
@@ -438,7 +457,7 @@ export default function Home() {
               </div>
             </div>
             <div className="text-center text-sm text-gray-500 mb-4">
-              cyberideake mistakes. Check important info.
+              cyberide makes mistakes. Check important info.
             </div>
           </div>
         )}
@@ -455,8 +474,8 @@ export default function Home() {
                 Welcome to cyberide
               </h1>
               <p className="text-xl text-gray-500 font-medium mb-8 text-center max-w-xl select-none">
-                Relive, preserve, and cherish your most important memories.
-                Start by asking anything or sharing a thought below.
+                Create products beyond your wildest dreams, while also making them safe.
+                Start by asking anything about safe code or just start building.
               </p>
               <form
                 className="flex w-full max-w-xl gap-2 items-center bg-white/80 border border-[#afaead] shadow-lg rounded-full px-6 py-3 transition-all duration-200 focus-within:shadow-2xl focus-within:scale-[1.025] backdrop-blur-md"
@@ -526,8 +545,8 @@ export default function Home() {
                 <input
                   type="text"
                   id="FirstMessage"
-                  placeholder="Relive anything by asking"
-                  className="flex-1 bg-transparent outline-none text-lg px-2 placeholder-gray-400"
+                  placeholder="Create anything by asking"
+                  className="flex-1 bg-transparent outline-none text-black text-lg px-2 placeholder-gray-400"
                   aria-label="Ask a question to start"
                   autoComplete="off"
                 />
