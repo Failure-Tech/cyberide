@@ -1,6 +1,3 @@
-"""
-Hi, I'm Goku!
-"""
 import os
 import uuid
 import asyncio
