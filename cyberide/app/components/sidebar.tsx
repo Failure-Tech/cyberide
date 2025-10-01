@@ -397,18 +397,16 @@ export default function SideBar(props: SidebarProps) {
 
           {/* Playground */}
           <button
-            onClick={() => {
-              router.push("/playground");
-            }}
-            className={`flex items-center w-full text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-75 ${
+            onClick={() => router.push("/playground")}
+            className={`flex items-center w-full text-gray-700 hover:bg-gray-100 rounded-md transition-colors duration-75 cursor-pointer ${
               collapsed ? "justify-center p-2" : "gap-3 px-2 py-1.5"
             }`}
-            title={collapsed ? "Documentation" : ""}
+            title={collapsed ? "Playground" : ""}
           >
-              <FiCodesandbox className="w-4 h-4 flex-shrink-0" />
-              {!collapsed && (
-                <span className="text-sm font-medium">Playground</span>
-              )}
+            <FiCodesandbox className="w-4 h-4 flex-shrink-0" />
+            {!collapsed && (
+              <span className="text-sm font-medium">Playground</span>
+            )}
           </button>
 
           {/* Dashboard */}
