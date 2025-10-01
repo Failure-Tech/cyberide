@@ -33,6 +33,7 @@ import {
 } from "react-icons/bi";
 import { TfiLayersAlt } from "react-icons/tfi";
 import { BsBookHalf } from "react-icons/bs";
+import { FiCodesandbox } from "react-icons/fi";
 
 interface SidebarProps {
   selected: number;
@@ -45,11 +46,10 @@ const SideBarOptions = [
     link: "/",
   },
   {
-    text: "Memory-Graph",
-    iconPath: "/repo.svg",
-    link: "/repository",
-    tag: "beta",
-    tagcolor: "#000000",
+    text: "Playground",
+    iconPath: "",
+    link: "/playground",
+    tagcolor: "#000000"
   },
   {
     text: "Dashboard",
@@ -369,7 +369,7 @@ export default function SideBar(props: SidebarProps) {
           </button>
 
           {/* Search */}
-          <div
+          {/* <div
             className={`flex items-center text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-75 ${
               collapsed ? "justify-center p-2" : "gap-3 px-2 py-1.5"
             }`}
@@ -377,7 +377,7 @@ export default function SideBar(props: SidebarProps) {
           >
             <BiSearch className="w-4 h-4 flex-shrink-0" />
             {!collapsed && <span className="text-sm font-medium">Search</span>}
-          </div>
+          </div> */}
 
           {/* Memory */}
           {/* <button
@@ -394,6 +394,22 @@ export default function SideBar(props: SidebarProps) {
               <span className="text-sm font-medium">Memory Graph</span>
             )}
           </button> */}
+
+          {/* Playground */}
+          <button
+            onClick={() => {
+              router.push("/playground");
+            }}
+            className={`flex items-center w-full text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-75 ${
+              collapsed ? "justify-center p-2" : "gap-3 px-2 py-1.5"
+            }`}
+            title={collapsed ? "Documentation" : ""}
+          >
+              <FiCodesandbox className="w-4 h-4 flex-shrink-0" />
+              {!collapsed && (
+                <span className="text-sm font-medium">Playground</span>
+              )}
+          </button>
 
           {/* Dashboard */}
           <div
