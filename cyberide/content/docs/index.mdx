@@ -1,7 +1,100 @@
 ---
-title: Quick Start
+title: Getting Started
 ---
 
-## Introduction
+import { AiOutlineCode } from 'react-icons/ai'
+import { MdMemory } from 'react-icons/md'
+import { FaExternalLinkAlt } from 'react-icons/fa'
 
-blank
+## Welcome to Your AI Code Generation Assistant
+
+This application is built to accelerate modern development workflows by combining advanced research in AI-powered code generation with long-term memory and structural consistency.
+
+Right now, the application is focused on **generating and reasoning about code** — using cutting-edge models and tools to deliver fast, clean, and reliable results across common programming languages.
+
+---
+
+## Powered by Research
+
+Our system is built on two recent advancements in AI-driven software tooling:
+
+---
+
+### <AiOutlineCode /> PurpCode
+
+**PurpCode** introduces a new approach to code generation that is **purpose-aware** — it doesn’t just complete code, it builds toward long-horizon development goals.
+
+🔗 [Read the PurpCode Paper (arXiv)](https://arxiv.org/pdf/2507.19060) <FaExternalLinkAlt size="0.8em" />
+
+> _“PurpCode enables prompt-driven programming with structured decomposition, letting the model scaffold, implement, and refine code components across multi-step workflows.”_
+
+Key features from the paper:
+
+- **Decomposition Planning** — The model can break down complex prompts into scaffolded code structures.
+- **Intent Modeling** — Code generation aligns with high-level descriptions of functionality, not just immediate syntax completion.
+- **Improved Robustness** — The system exhibits higher performance on multi-turn, multi-file code synthesis tasks compared to baseline LLMs.
+
+PurpCode lays the foundation for a more **goal-oriented development workflow**, where the model can operate more like a collaborator than a pure autocomplete engine.
+
+---
+
+### <MdMemory /> mem0
+
+**mem0** is an **external memory and retrieval system** designed to extend the working memory of large language models. It allows AI agents to **store**, **retrieve**, and **reason across** past generations of code and design decisions.
+
+🔗 [Visit mem0.ai](https://mem0.ai) <FaExternalLinkAlt size="0.8em" />
+
+> _“mem0 enables persistent context for language models — enabling consistent and referential code generation over time.”_
+
+What makes mem0 important:
+
+- **Persistent Memory** — Retains and surfaces relevant past interactions, variable declarations, component structures, and API definitions.
+- **Semantic Retrieval** — Looks beyond keyword overlap to find code by meaning and intent.
+- **Conformance + Consistency** — Ensures that generated code follows the same patterns, style guides, and structural logic across files and sessions.
+
+In practice, mem0 allows your application to **scale up** — by maintaining coherence across larger and more complex codebases over time.
+
+---
+
+## What Can It Do Right Now?
+
+At this stage, the application focuses on **code generation**. You can use it to:
+
+- Generate **functions, components, classes**, and small services
+- Write code in **JavaScript, HTML/CSS, Python**, and more
+- Refactor or rewrite existing code from natural language
+- Preserve structure and context across multiple generations using memory
+
+This makes it ideal for quick prototyping, scaffolding, and structured exploration of new ideas.
+
+---
+
+## Built-in Mini Testing Environment
+
+A lightweight, in-browser testing environment is available for:
+
+- **HTML / CSS / JavaScript**  
+- **Python (non-networked, safe mode)**
+
+You can use this to:
+
+- Preview and run simple scripts or UI mockups
+- Interactively tweak and validate generated code
+- Debug outputs and understand model assumptions
+
+While this isn’t a full IDE or deployment pipeline, it gives you a **fast feedback loop** to test code ideas and iterate before exporting.
+
+> ⚠️ Advanced language support (e.g., Node.js, frameworks, databases) is currently in progress. This environment is best suited for frontend and basic scripting workflows.
+
+---
+
+## Example Use Cases
+
+Here are a few example prompts you can try:
+
+```text
+"Write a Python script that takes a CSV file and extracts all rows with a missing email address."
+
+## Contact
+
+Here is our team email for more information: condrxlabs@gmail.com

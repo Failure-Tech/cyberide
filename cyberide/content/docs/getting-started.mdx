@@ -1,0 +1,34 @@
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/your-repo.git
+cd your-repo
+
+# 2. Install dependencies
+npm install
+# or
+pnpm install
+
+# 3. Create environment file
+cp .env.example .env.local
+
+# 4. Fill out the .env.local file with the following:
+# (Replace the empty strings with your actual credentials)
+
+NEXT_PUBLIC_FIREBASE_APIKEY=""
+NEXT_PUBLIC_FIREBASE_AUTHDOMAIN=""
+NEXT_PUBLIC_FIREBASE_PROJECTID=""
+NEXT_PUBLIC_FIREBASE_STORAGEBUCKET=""
+NEXT_PUBLIC_FIREBASE_MESSAGINGSENDERID=""
+NEXT_PUBLIC_FIREBASE_APPID=""
+NEXT_PUBLIC_FIREBASE_MEASUREMENTID=""
+
+MEM0_API_KEY=""
+GOOGLE_API_KEY=""
+
+# 5. Run the development server
+npm run dev
+# or
+pnpm dev
+
+# 6. Open the app in your browser
+# -> http://localhost:3000
