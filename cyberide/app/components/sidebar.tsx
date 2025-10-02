@@ -410,7 +410,8 @@ export default function SideBar(props: SidebarProps) {
           </button>
 
           {/* Dashboard */}
-          <div
+          <button
+            onClick={() => {router.push("/settings/billing")}}
             className={`flex items-center text-gray-700 hover:bg-gray-100 rounded-md cursor-pointer transition-colors duration-75 ${
               collapsed ? "justify-center p-2" : "gap-3 px-2 py-1.5"
             }`}
@@ -420,7 +421,7 @@ export default function SideBar(props: SidebarProps) {
             {!collapsed && (
               <span className="text-sm font-medium">Dashboard</span>
             )}
-          </div>
+          </button>
 
           {/* Documentation */}
           <button
