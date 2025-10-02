@@ -2,6 +2,14 @@
 import React, { useState } from "react";
 import { PythonProvider, usePython, usePythonConsole } from "react-py";
 import Console from "./console";
+import dynamic from "next/dynamic";
+
+const DeepChat = dynamic(
+    () => import("deep-chat-react").then((mod) => mod.DeepChat),
+    {
+        ssr: false
+    }
+);
 
 const Playground = () => {
     const [input, setInput] = useState("");
@@ -57,6 +65,17 @@ const Playground = () => {
                 </main>
             </PythonProvider>
             <Console />
+            <DeepChat
+                connect={{
+                    url: "http://localhost:5000/chatbot",
+                    method: "POST",
+
+                }}
+                // directConnection={{
+                //     gemini: {"chat": true, "key": process.env.GOOGLE_API_KEY, "validateKeyProperty": true}
+                // }}
+                // stream={true}
+            />
         </>
     )
 }

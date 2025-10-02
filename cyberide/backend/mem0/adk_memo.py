@@ -9,6 +9,7 @@ from prompt import SYSTEM_PROMPT
 from dotenv import load_dotenv
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
+from flask import Response
 from werkzeug.utils import secure_filename
 
 from google.adk.agents import LlmAgent
@@ -461,6 +462,91 @@ def handle_query():
         print(f"[DEBUG] Full JSON response: {response_json}")
         
         return jsonify(response_json)
+    finally:
+        loop.close()
+
+async def process_query_async_chatbot(messages):
+
+    user_id = f"user_{uuid.uuid4().hex[:8]}"
+    session_id = f"session_{uuid.uuid4().hex[:8]}"
+    print(f"[DEBUG] Processing chatbot query for user_id: {user_id}")
+
+    await session_service.create_session(
+        app_name=app_name,
+        user_id=user_id,
+        session_id=session_id,
+    )
+
+    runner = Runner(agent=memory_agent, app_name=app_name, session_service=session_service)
+
+    # Normalize input
+    if isinstance(messages, dict) and "text" in messages:
+        # Handle {"text": "hello"} input
+        new_message = types.Content(role="user", parts=[types.Part(text=messages["text"])])
+    elif isinstance(messages, list) and messages:
+        # Handle list of message dicts
+        latest = messages[-1]
+        if "text" not in latest:
+            raise ValueError("Message format missing 'text'")
+        role = latest.get("role", "user")
+        new_message = types.Content(
+            role=role,
+            parts=[types.Part(text=latest["text"])]
+        )
+    elif isinstance(messages, str):
+        new_message = types.Content(role="user", parts=[types.Part(text=messages)])
+    else:
+        raise ValueError("No valid messages provided.")
+
+    final_response = ""
+    all_chunks = []
+
+    async for chunk in runner.run_async(
+        user_id=user_id,
+        session_id=session_id,
+        new_message=new_message,
+    ):
+        print(f"[DEBUG] Chunk received: {chunk}")
+        all_chunks.append(chunk)
+
+        if chunk.content and chunk.content.parts:
+            for part in chunk.content.parts:
+                if part.text:
+                    final_response += part.text
+                elif hasattr(part, 'function_response') and part.function_response:
+                    tool_response = part.function_response.response
+                    if isinstance(tool_response, dict):
+                        tool_msg = tool_response.get("message", "")
+                        if tool_msg:
+                            final_response += "\n" + tool_msg
+
+    return final_response, session_id, []
+
+
+@app.route("/chatbot", methods=["POST"])
+def chatbot():
+    data = request.json
+    # user_id = f"user_{uuid.uuid4().hex[:8]}" # fake id for now
+
+    print(f"[DEBUG] Incoming data to /chatbot: {data}")
+
+    if not data:
+        return jsonify({"status": "error", "message": "No JSON data was provided"}), 400
+
+    loop = asyncio.new_event_loop()
+    asyncio.set_event_loop(loop)
+
+    try:
+        result, session_id, memories = loop.run_until_complete(
+            process_query_async_chatbot(data.get("messages") or data)
+        )
+    
+        response = result
+
+        print(f"[DEBUG] Response text being sent to Deepchat: {response}")
+
+        return {"text": response}
+    
     finally:
         loop.close()
 
