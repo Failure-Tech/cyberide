@@ -13,7 +13,6 @@ const DeepChat = dynamic(
 
 const Playground = () => {
     const [input, setInput] = useState("");
-    const [output, setOutput] = useState("");
 
     const packages = {
         official: ['asciitree'],

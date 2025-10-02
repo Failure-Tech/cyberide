@@ -121,12 +121,11 @@ const Login = () => {
         <div className="flex-1 flex items-center justify-start px-10">
           <div className="w-full max-w-md flex flex-col gap-6">
             <div className="space-y-2">
-              <h1 className="text-[30px] font-normal text-gray-900">
+              <h1 className="text-[30px] font-normal text-white-900">
                 Welcome to cyberide
               </h1>
               <p className="text-[20px] font-medium text-[#c0bebd] leading-relaxed">
-                Ultimate tool to preserve dignity and identity for those facing
-                cognitive decline
+                Ultimate tool to generate safe code and ensure that every app is built with safety first
               </p>
             </div>
 
@@ -134,7 +133,7 @@ const Login = () => {
               <div className="space-y-2">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-[#c0bebd]"
                 >
                   Email
                 </label>
@@ -144,7 +143,7 @@ const Login = () => {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  className="w-full px-3 py-2 bg-white border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                  className="w-full px-3 py-2 bg-white border text-black border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   disabled={loading}
                 />
               </div>
@@ -154,13 +153,13 @@ const Login = () => {
                   <div className="flex justify-between">
                     <label
                       htmlFor="password"
-                      className="block text-sm font-medium text-gray-700"
+                      className="block text-sm font-medium text-[#c0bebd]"
                     >
                       Password
                     </label>
                     {mode == "login" ? (
-                      <div className="flex items-center gap-x-2 text-gray-600">
-                        <button  onClick={resetPassword} className=" transition-colors text-[12.5px]">
+                      <div className="flex items-center gap-x-2 text-black">
+                        <button  onClick={resetPassword} className="transition-colors text-[12.5px]">
                           Forgot your password?
                         </button>
                       </div>
@@ -172,7 +171,7 @@ const Login = () => {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     onKeyPress={handleKeyPress}
-                    className="w-full gap-5 px-3 py-2 bg-white border border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                    className="w-full gap-5 px-3 py-2 bg-white border text-black border-gray-200 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                     disabled={loading}
                   />
                 </div>
@@ -224,7 +223,7 @@ const Login = () => {
                 <button
                   onClick={handleGoogleLogin}
                   disabled={loading}
-                  className="w-full bg-white p-2 shadow-md flex items-center justify-center gap-2 border border-gray-200 rounded-md hover:bg-gray-50 disabled:bg-gray-50 disabled:cursor-not-allowed transition-all"
+                  className="w-full bg-white text-black p-2 shadow-md flex items-center justify-center gap-2 border border-gray-200 rounded-md hover:bg-gray-50 disabled:bg-gray-50 disabled:cursor-not-allowed transition-all"
                 >
                   <Image
                     src="/google.png"
