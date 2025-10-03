@@ -122,7 +122,7 @@ const Login = () => {
           <div className="w-full max-w-md flex flex-col gap-6">
             <div className="space-y-2">
               <h1 className="text-[30px] font-normal text-white-900">
-                Welcome to cyberide
+                Welcome to condrx
               </h1>
               <p className="text-[20px] font-medium text-[#c0bebd] leading-relaxed">
                 Ultimate tool to generate safe code and ensure that every app is built with safety first
@@ -253,7 +253,7 @@ const Login = () => {
               </div>
             </div>
             <div className="absolute bottom-5 left-10 font-medium text-[15px] text-[#a8a7a6]">
-              © cyberide 2025. All Rights Reserved.
+              © condrx 2025. All Rights Reserved.
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
   "lockfileVersion": 1,
   "workspaces": {
     "": {
-      "name": "cyberide",
+      "name": "condrx",
       "dependencies": {
         "@mdxeditor/editor": "^3.39.1",
         "@picovoice/leopard-react": "^2.0.3",

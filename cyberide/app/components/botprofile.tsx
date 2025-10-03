@@ -32,7 +32,7 @@ export function BotProfile(props: { name: string }) {
       height={40}
       width={40}
       className={`bg-gray-200 rounded-full text-white flex items-center justify-center w-10 h-10 text-lg font-semibold`}
-      alt="cyberide Logo"
+      alt="condrx Logo"
     />
   );
 }

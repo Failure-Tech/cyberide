@@ -18,7 +18,7 @@ export default function Billing(){
           <header className="px-5 bg-white">
             <div className="p-5 mt-5 ">
               <p className="text-[10px] text-black/50">Personal Settings</p>
-              <h1 className=" text-[20px] font-semibold"> Welcome to cyberide</h1>
+              <h1 className=" text-[20px] font-semibold"> Welcome to condrx</h1>
             </div>
             <ul className="flex flex-wrap my-0 mx-5 -mb-px">
               <li className="me-2 py-0">

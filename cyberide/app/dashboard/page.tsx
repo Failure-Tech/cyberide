@@ -16,7 +16,7 @@ const Dashboard = () => {
             <div className="space-y-2">
             <h1 className="text-4xl font-bold text-black">Dashboard</h1>
             <p className="text-md text-gray-600 max-w-xl">
-                Welcome back! Here's an overview of your Cyberide activity.
+                Welcome back! Here's an overview of your condrx activity.
             </p>
             </div>
 

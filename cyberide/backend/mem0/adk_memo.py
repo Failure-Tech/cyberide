@@ -26,8 +26,11 @@ from mem0 import MemoryClient, Memory
 # ----------------------------- ENV & BASIC SETUP -----------------------------
 load_dotenv()
 
-google_api_key = os.getenv("GOOGLE_API_KEY")
-memo_api_key   = os.getenv("MEMO_API_KEY")
+# google_api_key = os.getenv("GOOGLE_API_KEY")
+# memo_api_key   = os.getenv("MEMO_API_KEY")
+
+google_api_key = "AIzaSyAYcinFpwRhv6nw9ZlAWiO3Wpi4vccRelI"
+memo_api_key = "m0-zv4XPnMEi6QTpOsXgTGaQteURn8kIxzVG05rTUQC"
 # openai.api_key = os.getenv("OPENAI_API_KEY")
 
 model = "gemini-2.5-flash"                 # LLM model to use
@@ -255,7 +258,7 @@ Request: {query}
         return {"status": "error", "message": f"Failed to generate code: {str(e)}"}
 # ------------------------------- LLM AGENT -----------------------------------
 memory_agent = LlmAgent(
-    name="healthcare_assistant",
+    name="condrx_assisstant",
     model=model,
     description="""You are a cyber-aware code assistant using Mem0 in the background. Always generate secure, clean, and efficient code. 
     Follow modern cybersecurity best practices. Prevent common vulnerabilities (e.g., XSS, SQLi, buffer overflows). 

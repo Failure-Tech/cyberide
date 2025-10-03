@@ -457,7 +457,7 @@ export default function Home() {
               </div>
             </div>
             <div className="text-center text-sm text-gray-500 mb-4">
-              cyberide makes mistakes. Check important info.
+              condrx makes mistakes. Check important info.
             </div>
           </div>
         )}
@@ -471,7 +471,7 @@ export default function Home() {
           {conversation == undefined ? (
             <div className="relative z-10 flex flex-col items-center w-full">
               <h1 className="text-6xl font-extrabold bg-gradient-to-br from-black via-gray-800 to-gray-600 bg-clip-text text-transparent drop-shadow-lg text-center mb-2 select-none">
-                Welcome to cyberide
+                Welcome to condrx
               </h1>
               <p className="text-xl text-gray-500 font-medium mb-8 text-center max-w-xl select-none">
                 Create products beyond your wildest dreams, while also making them safe.
@@ -580,7 +580,7 @@ export default function Home() {
                       <BotMessage
                         message={e}
                         time={40}
-                        botName={"cyberide"}
+                        botName={"condrx"}
                         key={i + e.text}
                         suggestions={
                           conversation.latestMemories?.slice(0, 5) || []

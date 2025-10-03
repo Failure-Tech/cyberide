@@ -28,7 +28,7 @@ const Playground = () => {
             {/* Left Panel - Python Editor */}
             <div className="grow h-screen flex flex-col px-10 py-8 bg-white gap-6 overflow-y-auto max-w-[65%]">
             <div className="space-y-2">
-                <h1 className="text-4xl font-bold text-black">Cyberide Playground</h1>
+                <h1 className="text-4xl font-bold text-black">condrx Playground</h1>
                 <p className="text-md text-gray-600 max-w-xl">
                 Type and run Python code safely in-browser. Start building secure applications!
                 </p>
@@ -88,7 +88,7 @@ const Playground = () => {
             </div>
 
             <div className="bg-white rounded-xl shadow-md p-6">
-                <h2 className="text-lg font-semibold text-gray-800 mb-4">Chat with Cyberide</h2>
+                <h2 className="text-lg font-semibold text-gray-800 mb-4">Chat with condrx</h2>
                 <DeepChat
                 connect={{
                     url: "http://localhost:5000/chatbot",
