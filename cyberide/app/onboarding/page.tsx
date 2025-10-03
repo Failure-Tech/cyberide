@@ -48,7 +48,7 @@ const Onboarding = () => {
               }
             }}
             placeholder=""
-            className={`w-full p-2 border border-gray-300 bg-gray-100 rounded-md ${
+            className={`text-black w-full p-2 border border-gray-300 bg-gray-100 rounded-md ${
               error ? "border-red-500" : ""
             } ${error ? "mb-1" : "mb-4"}`}
           />
